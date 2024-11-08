@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.page {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.enclosure-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.enclosure-item {
+    background-color: #e0e0e0;
+    padding: 15px;
+    width: calc(33.33% - 10px);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.auth-container div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    background-color: #f9f9f9;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parc Animalier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header avec navigation -->
+    <header>
+        <h1>Bienvenue au Parc Animalier</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#enclosures">Enclos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tickets">Billetterie</a></li>
+                <li><a href="#auth">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page d'Accueil -->
+    <section id="home" class="page">
+        <h2>Découvrez les merveilles de la faune</h2>
+        <p>Explorez les différents biomes et observez des animaux fascinants.</p>
+        <button onclick="showSection('enclosures')">Explorer les enclos</button>
+    </section>
+
+    <!-- Section Enclos -->
+    <section id="enclosures" class="page" style="display: none;">
+        <h2>Nos Enclos</h2>
+        <div class="enclosure-list">
+            <div class="enclosure-item">Enclos des Lions</div>
+            <div class="enclosure-item">Enclos des Oiseaux</div>
+            <div class="enclosure-item">Enclos des Reptiles</div>
+            <!-- Ajoutez plus d'enclos ici -->
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="page" style="display: none;">
+        <h2>Services du Parc</h2>
+        <ul>
+            <li>Restaurant</li>
+            <li>Zone de repos</li>
+            <li>Parking</li>
+            <!-- Ajoutez d'autres services -->
+        </ul>
+    </section>
+
+    <!-- Section Billetterie -->
+    <section id="tickets" class="page" style="display: none;">
+        <h2>Billetterie en Ligne</h2>
+        <p>Achetez vos billets pour le parc.</p>
+        <button>Acheter un billet</button>
+    </section>
+
+    <!-- Section Connexion / Inscription -->
+    <section id="auth" class="page" style="display: none;">
+        <div class="auth-container">
+            <div class="login">
+                <h2>Connexion</h2>
+                <form action="#" method="post">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+
+            <div class="register">
+                <h2>Inscription</h2>
+                <form action="#" method="post">
+                    <label for="new-username">Nom d'utilisateur</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                    <label for="new-password">Mot de passe</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Parc Animalier</p>
+    </footer>
+
+    <!-- Script JavaScript pour gérer la navigation -->
+    <script>
+        // Fonction pour afficher une section spécifique
+        function showSection(sectionId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Gestion de la navigation par lien
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const sectionId = link.getAttribute('href').substring(1);
+                showSection(sectionId);
+            });
+        });
+
+        // Affiche la page d'accueil au chargement
+        showSection('home');
+    </script>
+
+</body>
+</html>
