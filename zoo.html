@@ -10,7 +10,7 @@
 
     <!-- Header avec navigation -->
     <header>
-        <h1>Bienvenue au Parc Animalier</h1>
+        <h1>Parc Animalier</h1>
         <nav>
             <ul>
                 <li><a href="#home">Accueil</a></li>
@@ -22,44 +22,54 @@
         </nav>
     </header>
 
-    <!-- Page d'Accueil -->
-    <section id="home" class="page">
-        <h2>Découvrez les merveilles de la faune</h2>
-        <p>Explorez les différents biomes et observez des animaux fascinants.</p>
-        <button onclick="showSection('enclosures')">Explorer les enclos</button>
+    <!-- Page d'Accueil avec Carrousel d'Images -->
+    <section id="home" class="page active">
+        <div class="home-content">
+            <h2>Découvrez les Merveilles de la Faune</h2>
+            <p>Explorez les différents biomes et observez des animaux fascinants dans notre parc animalier.</p>
+            <button onclick="showSection('enclosures')">Explorer les Enclos</button>
+        </div>
+        
+        <!-- Carrousel d'Images -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="./enclos1.avif" alt="Animal 1" class="carousel-item active">
+                <img src="./enclos2.jpeg" alt="Animal 2" class="carousel-item">
+                <img src="./enclos3.jpg" alt="Animal 3" class="carousel-item">
+            </div>
+            <button class="carousel-control prev" onclick="prevImage()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextImage()">&#10095;</button>
+        </div>
     </section>
 
     <!-- Section Enclos -->
-    <section id="enclosures" class="page" style="display: none;">
-        <h2>Nos Enclos</h2>
+    <section id="enclosures" class="page">
         <div class="enclosure-list">
             <div class="enclosure-item">Enclos des Lions</div>
             <div class="enclosure-item">Enclos des Oiseaux</div>
             <div class="enclosure-item">Enclos des Reptiles</div>
-            <!-- Ajoutez plus d'enclos ici -->
         </div>
     </section>
 
     <!-- Section Services -->
-    <section id="services" class="page" style="display: none;">
+    <section id="services" class="page">
         <h2>Services du Parc</h2>
         <ul>
             <li>Restaurant</li>
             <li>Zone de repos</li>
             <li>Parking</li>
-            <!-- Ajoutez d'autres services -->
         </ul>
     </section>
 
     <!-- Section Billetterie -->
-    <section id="tickets" class="page" style="display: none;">
+    <section id="tickets" class="page">
         <h2>Billetterie en Ligne</h2>
         <p>Achetez vos billets pour le parc.</p>
         <button>Acheter un billet</button>
     </section>
 
     <!-- Section Connexion / Inscription -->
-    <section id="auth" class="page" style="display: none;">
+    <section id="auth" class="page">
         <div class="auth-container">
             <div class="login">
                 <h2>Connexion</h2>
@@ -71,7 +81,6 @@
                     <button type="submit">Se connecter</button>
                 </form>
             </div>
-
             <div class="register">
                 <h2>Inscription</h2>
                 <form action="#" method="post">
@@ -92,16 +101,14 @@
         <p>&copy; 2024 Parc Animalier</p>
     </footer>
 
-    <!-- Script JavaScript pour gérer la navigation -->
+    <!-- Script JavaScript pour gérer la navigation et le carrousel -->
     <script>
-        // Fonction pour afficher une section spécifique
         function showSection(sectionId) {
             const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
         }
 
-        // Gestion de la navigation par lien
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -110,8 +117,26 @@
             });
         });
 
-        // Affiche la page d'accueil au chargement
         showSection('home');
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-item');
+
+        function showImage(index) {
+            images.forEach((img, i) => img.classList.toggle('active', i === index));
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000);
     </script>
 
 </body>
