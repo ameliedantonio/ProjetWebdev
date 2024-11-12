@@ -6,8 +6,20 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
+    background: url('./fond.webp') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
+}
+.welcome-message {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2E8B57; /* Vert foncé pour rappeler la nature */
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour une meilleure lisibilité */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header {
@@ -137,7 +149,7 @@ button:hover {
     justify-content: center;
     gap: 40px;
     padding: 20px;
-    background-color: #e0f7f4;
+    background-color: #2E8B57;
     border-radius: 10px;
 }
 
@@ -181,5 +193,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 30px;
+    margin-top: auto; /* Pousse le footer vers le bas */
 }
+
