@@ -85,6 +85,7 @@ button:hover {
 .carousel {
     position: relative;
     max-width: 600px;
+    height: 300px;
     margin: 30px auto;
     overflow: hidden;
     border-radius: 15px;
@@ -92,6 +93,8 @@ button:hover {
 
 .carousel-images {
     display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .carousel-item {
