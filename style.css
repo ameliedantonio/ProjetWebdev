@@ -157,13 +157,13 @@ button:hover {
     right: 10px;
 }
 
-.enclosure-list {
+.biomes-list {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-.enclosure-item {
+.biomes-item {
     background-color: #ffffff;
     padding: 20px;
     width: calc(33.33% - 15px);
@@ -173,7 +173,7 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
-.enclosure-item:hover {
+.biomes-item:hover {
     transform: scale(1.05);
 }
 
