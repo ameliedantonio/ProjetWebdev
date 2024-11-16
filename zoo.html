@@ -48,17 +48,123 @@
     </section>
 
     <!-- Section Biomes -->
-    <section id="biomes" class="page">
-        <h2>Nos Enclos</h2>
-        <div class="biomes-list">
-            <div class="biomes-item">Belvédère</div>
-            <div class="biomes-item">Plateau</div>
-            <div class="biomes-item">Clairères</div>
-            <div class="biomes-item">Bois des pins</div>
-            <div class="biomes-item">Vallons des cascades</div>
-            <div class="biomes-item">Bergerie des reptiles</div>
+<section id="biomes" class="page">
+    <h2>Nos Biomes et Enclos</h2>
+    <div class="biomes-list">
+        <!-- Belvédère -->
+        <div class="biomes-item" onclick="toggleEnclosures('belvedere')">
+            Belvédère
+            <div class="enclosures" id="belvedere">
+                <!-- Ajouter 9 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                    <li>Enclos 2</li>
+                    <li>Enclos 3</li>
+                    <li>Enclos 4</li>
+                    <li>Enclos 5</li>
+                    <li>Enclos 6</li>
+                    <li>Enclos 7</li>
+                    <li>Enclos 8</li>
+                    <li>Enclos 9</li>
+                </ul>
+            </div>
         </div>
-    </section>
+
+        <!-- Plateau -->
+        <div class="biomes-item" onclick="toggleEnclosures('plateau')">
+            Plateau
+            <div class="enclosures" id="plateau">
+                <!-- Ajouter 13 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                    <li>Enclos 2</li>
+                    <li>Enclos 3</li>
+                    <li>Enclos 4</li>
+                    <li>Enclos 5</li>
+                    <li>Enclos 6</li>
+                    <li>Enclos 7</li>
+                    <li>Enclos 8</li>
+                    <li>Enclos 9</li>
+                    <li>Enclos 10</li>
+                    <li>Enclos 11</li>
+                    <li>Enclos 12</li>
+                    <li>Enclos 13</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Clairères -->
+        <div class="biomes-item" onclick="toggleEnclosures('claires')">
+            Clairères
+            <div class="enclosures" id="claires">
+                <!-- Ajouter 15 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                    <li>Enclos 2</li>
+                    <li>Enclos 3</li>
+                    <li>Enclos 4</li>
+                    <li>Enclos 5</li>
+                    <li>Enclos 6</li>
+                    <li>Enclos 7</li>
+                    <li>Enclos 8</li>
+                    <li>Enclos 9</li>
+                    <li>Enclos 10</li>
+                    <li>Enclos 11</li>
+                    <li>Enclos 12</li>
+                    <li>Enclos 13</li>
+                    <li>Enclos 14</li>
+                    <li>Enclos 15</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bois des pins -->
+        <div class="biomes-item" onclick="toggleEnclosures('bois')">
+            Bois des pins
+            <div class="enclosures" id="bois">
+                <!-- Ajouter 5 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                    <li>Enclos 2</li>
+                    <li>Enclos 3</li>
+                    <li>Enclos 4</li>
+                    <li>Enclos 5</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vallon des cascades -->
+        <div class="biomes-item" onclick="toggleEnclosures('vallon')">
+            Vallons des cascades
+            <div class="enclosures" id="vallon">
+                <!-- Ajouter 9 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                    <li>Enclos 2</li>
+                    <li>Enclos 3</li>
+                    <li>Enclos 4</li>
+                    <li>Enclos 5</li>
+                    <li>Enclos 6</li>
+                    <li>Enclos 7</li>
+                    <li>Enclos 8</li>
+                    <li>Enclos 9</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bergerie des reptiles -->
+        <div class="biomes-item" onclick="toggleEnclosures('reptiles')">
+            Bergerie des reptiles
+            <div class="enclosures" id="reptiles">
+                <!-- Ajouter 1 enclos -->
+                <ul>
+                    <li>Enclos 1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
     
 
     <!-- Section Services -->
@@ -110,47 +216,6 @@
     <footer>
         <p>&copy; 2024 Parc Animalier</p>
     </footer>
-
-    <!-- Script JavaScript pour gérer la navigation et le carrousel -->
-    <script>
-        function showSection(sectionId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const sectionId = link.getAttribute('href').substring(1);
-                showSection(sectionId);
-            });
-        });
-
-        showSection('home');
-
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-item');
-
-        function showImage(index) {
-            images.forEach((img, i) => img.classList.toggle('active', i === index));
-        }
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage(currentIndex);
-        }
-
-        setInterval(nextImage, 3000);
-    </script>
-    
-<!--pour lier le java -->
-<script src="script.js"></script> 
-
 </body>
+<script src="script.js"></script>
 </html>

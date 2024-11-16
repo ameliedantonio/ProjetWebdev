@@ -26,6 +26,17 @@ function showImage(index) {
     images.forEach((img, i) => img.classList.toggle('active', i === index)); // Affiche l'image active
 }
 
+//Fonction pour gerer l'ouverture et fermeture des panneaux d'enclos
+function toggleEnclosures(biomeId) {
+    const enclosure = document.getElementById(biomeId);
+    if (enclosure.style.display === "block") {
+        enclosure.style.display = "none";
+    } else {
+        enclosure.style.display = "block";
+    }
+}
+
+
 // Fonction pour aller à l'image suivante
 function nextImage() {
     currentIndex = (currentIndex + 1) % images.length; // Incrémente l'index, et revient à 0 quand on arrive à la fin
