@@ -1,0 +1,145 @@
+/* Amélioration du design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('./fond.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+}
+
+header {
+  background-color: rgba(44, 62, 80, 0.9);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(44, 62, 80, 0.9);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.biomes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.biome {
+  background-color: rgba(52, 152, 219, 0.9);
+  width: 30%;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.biome:hover {
+  transform: scale(1.05);
+}
+
+.biome h3 {
+  text-align: center;
+  color: white;
+}
+
+.enclosures {
+  margin-top: 20px;
+}
+
+.enclosure {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.enclosure:hover {
+  transform: scale(1.05);
+}
+
+.enclosure h4 {
+  margin: 0;
+}
+
+.animals p {
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .biome {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .biome {
+    width: 100%;
+  }
+}
+
+/* Nouveau style pour le menu */
+nav {
+  background-color: #34495e;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #1abc9c;
+}
+
+nav a.active {
+  background-color: #1abc9c;
+}
+
