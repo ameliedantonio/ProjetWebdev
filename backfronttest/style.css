@@ -1,43 +1,44 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Arial', serif;
     background: url('./fond.webp') no-repeat center center fixed;
     background-size: cover;
     color: #333;
-}
-
-/* Section contenant les informations d'accueil */
-.home-content {
-    margin-bottom: 20px; /* Marge entre le texte et le carrousel */
-}
-
-/*.welcome-message {
     text-align: center;
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #2E8B57; /* Vert foncé pour rappeler la nature */
-    /*margin-top: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour une meilleure lisibilité */
-    /*border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}*/
+}
 
-/* Améliorer l'apparence du message de bienvenue */
+/* Section Contenant les Informations d'Accueil */
+.home-content {
+    margin-bottom: 20px;
+    margin: 20px;
+}
+
+
+
 .welcome-message {
     padding: 15px;
+    max-width: 800px;
     background-color: #2E8B57cc; /* Légèrement transparent */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
+    margin-bottom: 30px;
+    margin-right: 150px;
+    margin-left: 360px;
     font-size: 1.2em;
     text-align: center;
     color: rgb(255, 255, 255); /* Couleur verte pour rappeler la nature */
+    transition: opacity 0.5s ease-in-out;
+
+    display: block;
+    opacity: 1;
 }
 
 header {
@@ -72,46 +73,11 @@ header nav ul li a {
     font-weight: bold;
 }
 
-.page {
-    display: none;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    transition: opacity 0.5s ease-in-out;
-}
 
-.page.active {
-    display: block;
-    opacity: 1;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #2E8B57;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3a9d68;
-}
-
-/*.carousel { */ /*
-    position: relative;
-    max-width: 1000px;
-    height: 500px;
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 15px;
-} */
 
 .carousel {
     position: relative;
-    max-width: 100%;
+    max-width: 800px;
     height: 400px;
     margin: 30px auto;
     overflow: hidden;
@@ -157,76 +123,6 @@ button:hover {
     right: 10px;
 }
 
-.biomes-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-/* Biomes */
-.biomes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .biome {
-    background-color: rgba(52, 152, 219, 0.9);
-    width: 30%;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .biome:hover {
-    transform: scale(1.05);
-  }
-  
-  .biome h3 {
-    text-align: center;
-    color: white;
-  }
-  
-  .enclosures {
-    margin-top: 20px;
-  }
-  
-  .enclosure {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .enclosure:hover {
-    transform: scale(1.05);
-  }
-  
-  .enclosure h4 {
-    margin: 0;
-  }
-  
-  .animals p {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .biome {
-      width: 45%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .biome {
-      width: 100%;
-    }
-  }
 
 /* Boutons */
 button {
@@ -239,40 +135,115 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
+    margin: 10px auto; /* Centrer les boutons */
+    display: block;
 }
+
+form button {
+    display: block;
+    margin: 20px auto; /* Centre horizontalement */
+}
+
 
 button:hover {
     background-color: #3a9d68;
 }
 
-
-.auth-container {
+/* Biomes */
+.biomes-container {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 20px;
-    background-color: #2E8B57;
-    border-radius: 10px;
 }
 
-.auth-container h2 {
+.biome {
+    background-color: rgba(52, 152, 219, 0.9);
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center; /* Centrer les titres et contenus */
+}
+
+.biome:hover {
+    transform: scale(1.05);
+}
+
+.biome h3 {
     text-align: center;
-    margin-bottom: 15px;
+    color: white;
+}
+
+/* Titres "Nos Biomes et Enclos" */
+.biomes-title {
+    text-align: center;
+    color: #2E8B57; /* Couleur verte pour rappeler la nature */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Enclosures */
+.enclosures {
+    margin-top: 20px;
+}
+
+.enclosure {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center; /* Centrer le contenu des enclos */
+}
+
+.enclosure:hover {
+    transform: scale(1.05);
+}
+
+.enclosure h4 {
+    margin: 0;
+}
+
+.animals p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Conteneurs de Connexion et d'Inscription */
+.auth-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; /* Centrer les conteneurs */
+    gap: 20px;
 }
 
 .auth-container form {
-    background-color: white;
+    background-color: #2E8B57;
     padding: 20px;
     border-radius: 10px;
+    color: white;
+    width: 100%; /* Deux carrés égaux */
+    text-align: center;
 }
 
-.auth-container label {
+.auth-container form h2 {
+    margin-bottom: 15px;
+}
+
+.auth-container form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.auth-container input {
+.auth-container form input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -280,16 +251,18 @@ button:hover {
     border-radius: 5px;
 }
 
-.auth-container button {
+.auth-container form button {
     width: 100%;
     padding: 10px;
-    background-color: #2E8B57;
+    background-color: #3a9d68;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+
+/* Footer */
 footer {
     background-color: #2E8B57cc;
     color: white;

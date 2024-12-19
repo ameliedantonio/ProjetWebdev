@@ -25,7 +25,6 @@ session_start();
     </header>
 
     <section>
-        <h2>Connexion / Inscription</h2>
         <div class="auth-container">
         <div class="login">
                 <?php

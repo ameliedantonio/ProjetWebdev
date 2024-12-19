@@ -1,6 +1,3 @@
-// Afficher par défaut la section "index.php"
-showSection('home');
-
 // Initialisation du carrousel
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-item'); // Récupère toutes les images du carrousel
@@ -9,6 +6,7 @@ const images = document.querySelectorAll('.carousel-item'); // Récupère toutes
 function showImage(index) {
     images.forEach((img, i) => img.classList.toggle('active', i === index)); // Affiche l'image active
 }
+
 
 
 // Fonction pour aller à l'image suivante
@@ -23,9 +21,9 @@ function prevImage() {
     showImage(currentIndex); // Affiche l'image correspondante
 }
 
-// Intervalles de changement d'image toutes les 3 secondes
-setInterval(nextImage, 3000);
-
 // Ajout des événements pour les boutons de navigation du carrousel
 document.querySelector('.carousel-control.next').addEventListener('click', nextImage);
 document.querySelector('.carousel-control.prev').addEventListener('click', prevImage);
+
+// Intervalles de changement d'image toutes les 3 secondes
+setInterval(nextImage, 3000);

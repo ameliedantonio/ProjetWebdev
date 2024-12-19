@@ -9,6 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parc Animalier</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- Header avec navigation -->
@@ -26,8 +27,8 @@ session_start();
     </header>
 
     <!-- Page d'Accueil avec Carrousel d'Images -->
-    <section id="home" class="page active">
-        <div class="home-constent">
+    <section id="index" class="page active">
+        <div class="home-content">
             <h2>Découvrez les Merveilles de la Faune</h2>
             <p>Explorez les différents biomes et observez des animaux fascinants dans notre parc animalier.</p>
             <button onclick="window.location.href='biomes.php'">Explorer les Biomes</button>
@@ -65,4 +66,5 @@ session_start();
 
     </footer>
 </body>
+<script src="script.js"></script>
 </html>

@@ -13,7 +13,7 @@ body {
 
 /* Section contenant les informations d'accueil */
 .home-content {
-    margin-bottom: 20px; /* Marge entre le texte et le carrousel */
+    margin-bottom: 60px; /* Marge entre le texte et le carrousel */
 }
 
 /*.welcome-message {

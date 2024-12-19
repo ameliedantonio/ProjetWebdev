@@ -38,6 +38,7 @@ session_start();
             }
         }
         ?>
+        <img src="./singe3.png" alt="map" class="map-services" style="width: 850px; height: auto;">
     </section>
 
      <!-- Footer -->

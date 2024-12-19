@@ -41,6 +41,12 @@ session_start();
             <li>Espace Pique-Nique</li>
             <li>Point de vue</li>
         </ul>
+        <h3>Horaires du Parc<h3>
+        <ul>
+            <li>7h - 20h</li>
+        </ul>
+        <img src="./map.png" alt="map" class="map-services" style="width: 1000px; height: auto;">
+
     </section>
 
      <!-- Footer -->
