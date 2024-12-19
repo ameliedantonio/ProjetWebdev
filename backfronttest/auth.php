@@ -50,7 +50,7 @@ session_start();
                     }
                 }
                 ?>
-                <h2>Connexion</h2>
+                <h2><br>Connexion</h2>
                 <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
                 <form action="#auth" method="post">
                     <input type="hidden" name="login" value="1">

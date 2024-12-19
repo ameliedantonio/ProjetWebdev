@@ -27,7 +27,7 @@ session_start();
     <section>
         <h2><br>Services du Parc</h2>
         <ul>
-            <li>Toilettes</li>
+            <li><br>Toilettes</li>
             <li>Points d'eau</li>
             <li>Boutique</li>
             <li>Gare</li>

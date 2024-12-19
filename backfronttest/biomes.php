@@ -27,7 +27,8 @@ include 'db.php'; //connexion a la bdd
     </header>
 
     <section>
-        <h2>Nos Biomes et Enclos</h2>
+        <h2><br>Nos Biomes et Enclos</h2>
+        <h4><br>Repérez où se situent vos animaux préférés au sein de notre parc !</h4>
         <div class="biomes-container">
             <?php
             $biomesStmt = $pdo->query("SELECT * FROM biomes");

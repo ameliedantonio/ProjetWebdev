@@ -31,12 +31,12 @@ if (empty($_SESSION['csrf_token'])) {
     </header>
 
     <section>
-        <h2>Billetterie en Ligne</h2>
+        <h2><br>Billetterie en Ligne</h2>
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <form action="#" method="post">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-                <label for="ticket_type">Choisissez un billet :</label>
+                <label for="ticket_type"><br>Choisissez un billet :</label>
                 <select name="ticket_type" id="ticket_type" required>
                     <option value="" disabled selected>-- Sélectionnez un type de billet --</option>
                     <option value="enfant">Billet 1 journée Enfant (0-18 ans) - 10€</option>
