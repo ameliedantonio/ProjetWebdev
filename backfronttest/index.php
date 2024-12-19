@@ -37,9 +37,26 @@ session_start();
         <!-- Carrousel d'Images -->
         <div class="carousel">
             <div class="carousel-images">
-                <img src="./enclos1.avif" alt="Animal 1" class="carousel-item active">
-                <img src="./enclos2.jpg" alt="Animal 2" class="carousel-item">
-                <img src="./enclos3.jpg" alt="Animal 3" class="carousel-item">
+                <img src="./photos/bergerie/iguane.jpg" alt="Animal 1" class="carousel-item active">
+                <img src="./photos/bergerie/python.jpg" alt="Animal 2" class="carousel-item">
+                <img src="./photos/belvedere/coati.jpg" alt="Animal 3" class="carousel-item">
+                <img src="./photos/belvedere/saimiri.jpg" alt="Animal 4" class="carousel-item">
+                <img src="./photos/bois/daim.jpg" alt="Animal 5" class="carousel-item">
+                <img src="./photos/clairieres/tamanoir.jpg" alt="Animal 6" class="carousel-item">
+                <img src="./photos/clairieres/tigre.jpg" alt="Animal 7" class="carousel-item">
+                <img src="./photos/clairieres/porc_epic.jpg" alt="Animal 8" class="carousel-item">
+                <img src="./photos/clairieres/mouton_noir.jpg" alt="Animal 9" class="carousel-item">
+                <img src="./photos/plateau/cercopitheque.jpg" alt="Animal 10" class="carousel-item">
+                <img src="./photos/plateau/grivet.jpg" alt="Animal 11" class="carousel-item">
+                <img src="./photos/plateau/lion.jpg" alt="Animal 12" class="carousel-item">
+                <img src="./photos/plateau/ouistiti.jpg" alt="Animal 13" class="carousel-item">
+                <img src="./photos/vallon/oiseau.jpg" alt="Animal 14" class="carousel-item">
+                <img src="./photos/vallon/loutre.jpg" alt="Animal 15" class="carousel-item">
+                <img src="./photos/vallon/panda_roux.jpg" alt="Animal 16" class="carousel-item">
+                <img src="./photos/vallon/grand_hocco.jpg" alt="Animal 17" class="carousel-item">
+                <img src="./photos/vallon/chevre_naine.jpg" alt="Animal 18" class="carousel-item">
+                <img src="./photos/vallon/binturong.jpg" alt="Animal 19" class="carousel-item">
+
             </div>
             <button class="carousel-control prev" onclick="prevImage()">&#10094;</button>
             <button class="carousel-control next" onclick="nextImage()">&#10095;</button>
@@ -51,11 +68,9 @@ session_start();
 
      <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Parc Animalier</p>
-
         <?php
     if (!empty($_SESSION['nickname'])) {
-        echo " - Bienvenue, " . htmlspecialchars($_SESSION['nickname']) . "!";
+        echo " Bienvenue " . htmlspecialchars($_SESSION['nickname']) . " !";
         }
         ?>
 
@@ -64,6 +79,7 @@ session_start();
             <a href="logout.php">Se déconnecter</a>
         <?php endif; ?>
 
+        <p>&copy; 2024 Parc Animalier</p>
     </footer>
 </body>
 <script src="script.js"></script>

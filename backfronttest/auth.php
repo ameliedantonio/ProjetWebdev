@@ -98,11 +98,10 @@ session_start();
 
      <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Parc Animalier</p>
-
+        
         <?php
     if (!empty($_SESSION['nickname'])) {
-        echo " - Bienvenue, " . htmlspecialchars($_SESSION['nickname']) . "!";
+        echo " Bienvenue " . htmlspecialchars($_SESSION['nickname']) . " !";
         }
         ?>
 
@@ -111,6 +110,7 @@ session_start();
             <a href="logout.php">Se déconnecter</a>
         <?php endif; ?>
 
+        <p>&copy; 2024 Parc Animalier</p>
     </footer>
 </body>
 </html>

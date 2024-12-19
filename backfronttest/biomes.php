@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include 'db.php'; //connexion a la bdd
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ include 'db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomes</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
@@ -68,11 +69,9 @@ include 'db.php';
 
      <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Parc Animalier</p>
-
         <?php
     if (!empty($_SESSION['nickname'])) {
-        echo " - Bienvenue, " . htmlspecialchars($_SESSION['nickname']) . "!";
+        echo " Bienvenue " . htmlspecialchars($_SESSION['nickname']) . " !";
         }
         ?>
 
@@ -81,6 +80,8 @@ include 'db.php';
             <a href="logout.php">Se déconnecter</a>
         <?php endif; ?>
 
+        <p>&copy; 2024 Parc Animalier</p>
     </footer>
+
 </body>
 </html>
