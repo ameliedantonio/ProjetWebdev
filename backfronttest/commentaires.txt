@@ -1,0 +1,2 @@
+{"username":"Anonyme","comment":"bien","rating":3,"date":"2024-12-20 10:41:49"}
+{"username":"Anonyme","comment":"Parc tr\u00e8s sympa","rating":5,"date":"2024-12-20 10:52:13"}

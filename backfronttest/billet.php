@@ -26,6 +26,7 @@ if (empty($_SESSION['csrf_token'])) {
                 <li><a href="services.php">Services</a></li>
                 <li><a href="billet.php">Billetterie</a></li>
                 <li><a href="auth.php">Connexion</a></li>
+                <li><a href="commentaires.php">Commentaires</a></li>
             </ul>
         </nav>
     </header>
