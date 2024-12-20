@@ -1,6 +1,22 @@
 <?php
 session_start();
-include 'db.php'; //connexion a la bdd
+include 'db.php'; //connexion à la bdd
+
+$search_result = [];
+if (isset($_POST['search'])) {
+    $search_term = htmlspecialchars($_POST['search_term']);
+    // Requête corrigée avec jointures pour récupérer le biome
+    $stmt = $pdo->prepare("
+        SELECT animals.name, biomes.name AS biome 
+        FROM animals
+        JOIN relation_enclos_animals ON animals.id = relation_enclos_animals.id_animal
+        JOIN enclosures ON relation_enclos_animals.id_enclos = enclosures.id
+        JOIN biomes ON enclosures.id_biomes = biomes.id
+        WHERE animals.name LIKE :search_term
+    ");
+    $stmt->execute(['search_term' => '%' . $search_term . '%']);
+    $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +26,6 @@ include 'db.php'; //connexion a la bdd
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomes</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <header>
@@ -29,6 +44,26 @@ include 'db.php'; //connexion a la bdd
     <section>
         <h2><br>Nos Biomes et Enclos</h2>
         <h4><br>Repérez où se situent vos animaux préférés au sein de notre parc !</h4>
+
+        <!-- Section ajoutée pour la recherche d'animaux -->
+        <section>
+            <h2><br>Recherchez d'un animal</h2>
+            <form method="POST" action="">
+                <input type="text" name="search_term" placeholder="Entrez le nom d'un animal" required>
+                <button type="submit" name="search">Rechercher</button>
+            </form>
+            <?php if (!empty($search_result)): ?>
+                <h3>Résultats de la recherche :</h3>
+                <ul>
+                    <?php foreach ($search_result as $animal): ?>
+                        <li><?= htmlspecialchars($animal['name']) ?> (<?= htmlspecialchars($animal['biome']) ?>)</li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php elseif (isset($_POST['search'])): ?>
+                <p>Aucun animal trouvé.</p>
+            <?php endif; ?>
+        </section>
+
         <div class="biomes-container">
             <?php
             $biomesStmt = $pdo->query("SELECT * FROM biomes");
@@ -68,15 +103,14 @@ include 'db.php'; //connexion a la bdd
         </div>
     </section>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <?php
-    if (!empty($_SESSION['nickname'])) {
-        echo " Bienvenue " . htmlspecialchars($_SESSION['nickname']) . " !";
+        if (!empty($_SESSION['nickname'])) {
+            echo " Bienvenue " . htmlspecialchars($_SESSION['nickname']) . " !";
         }
         ?>
 
-        </p>
         <?php if (isset($_SESSION['user_id'])): ?>
             <a href="logout.php">Se déconnecter</a>
         <?php endif; ?>

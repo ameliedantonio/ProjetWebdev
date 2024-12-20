@@ -26,20 +26,28 @@ session_start();
 
     <section>
         <h2><br>Services du Parc</h2>
+        <h4><br>Restauration</h4>
         <ul>
-            <li><br>Toilettes</li>
+            <li>Restaurant du parc</li>
+            <li>Paillote</li>
+            <li>Café Nomade</li>
+            <li>Petit Café</li>
+            <li>Espace Pique-Nique</li>
+        </ul>
+        <h4><br>Loisirs</h4>
+        <ul>
+            <li>Tente pédagogique</li>
+            <li>Plateau de jeux</li>
+            <li>Point de vue</li><br>
+        </ul>
+        <h4><br>Autres services</h4>
+        <ul>
+            <li>Toilettes</li>
             <li>Points d'eau</li>
             <li>Boutique</li>
             <li>Gare</li>
             <li>Trajet train</li>
-            <li>Lodge</li>
-            <li>Tente pédagogique</li>
-            <li>Paillote</li>
-            <li>Café Nomade</li>
-            <li>Petit Café</li>
-            <li>Plateau de jeux</li>
-            <li>Espace Pique-Nique</li>
-            <li>Point de vue</li><br>
+            <li>Lodge</li><br>
         </ul>
         <h3>Horaires d'ouverture du Parc</h3>
         <ul>
