@@ -61,6 +61,16 @@ session_start();
 
     </section>
 
+    <section>
+            <h3 style="color: red;">En cas d'urgence au Parc</h3>
+            <ul>
+                <li style="color: red;">Merci de contacter le 06 31 29 35 98</li>
+                <li style="color: red;">Poste de secours à l'entrée</li><br>
+            </ul>
+    </section>
+
+
+
      <!-- Footer -->
     <footer>
         <?php
